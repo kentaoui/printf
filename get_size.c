@@ -24,4 +24,7 @@ int calculate_argument_size(const char *format, int *index)
 
 	return argument_size;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34478e873f26a2b47415e481a2ff4fbb64a90f9c
