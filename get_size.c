@@ -1,30 +1,27 @@
 #include "main.h"
 
 /**
- * calculate_argument_size - Calculates the size to cast the argument
- * @format: Formatted string containing the conversion specifier
- * @index: Index of the current character being checked in the format string
+ * get_size - Calculates the size to cast the argument
+ * @format: Formatted string in which to print the arguments
+ * @i: List of arguments to be printed.
  *
- * Return: Calculated argument size.
+ * Return: Precision.
  */
-int calculate_argument_size(const char *format, int *index)
+int get_size(const char *format, int *i)
 {
-	int current_index = *index + 1;
-	int argument_size = 0;
+	int curr_i = *i + 1;
+	int size = 0;
 
-	if (format[current_index] == 'l')
-		argument_size = ARG_LONG;
-	else if (format[current_index] == 'h')
-		argument_size = ARG_SHORT;
+	if (format[curr_i] == 'l')
+		size = S_LONG;
+	else if (format[curr_i] == 'h')
+		size = S_SHORT;
 
-	if (argument_size == 0)
-		*index = current_index - 1;
+	if (size == 0)
+		*i = curr_i - 1;
 	else
-		*index = current_index;
+		*i = curr_i;
 
-	return argument_size;
+	return (size);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 34478e873f26a2b47415e481a2ff4fbb64a90f9c
